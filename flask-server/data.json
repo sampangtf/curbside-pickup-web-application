@@ -1,26 +1,62 @@
 {
     "restaurants": [{
-        "siteName": "Jane's Kitchen",
+        "siteName": "Umma's House Japanese Restaurant",
         "enterpriseUnitName": "site-001",
-        "description": "Test Site for Postman Collection",
+        "description": "Sushi/BBQ/Bubble tea/Bulgogi/Udon",
         "address": {
-            "street": "799 Piedmont Ave NE",
+            "street": "75 5th St NW",
             "city": "Atlanta",
             "state": "GA",
             "country": "USA",
             "postalCode": "30308"
         },
         "coordinates": {
-            "latitude": 33.77660305263519,
-            "longitude": -84.3810668872292
+            "latitude": 33.7717,
+            "longitude": -84.3726
         },
         "status": "ACTIVE",
         "referenceId": "site-001"
     },
     {
-        "siteName": "A.S.K. Tea",
+        "siteName": "Jane's Kitchen",
         "enterpriseUnitName": "site-002",
-        "description": "Best boba tea in Midtown Alanta!",
+        "description": "Sushi/Sashimi/Ramen/Tempura/Teriyaki/Sushi Roll",
+        "address": {
+            "street": "990 State St NW",
+            "city": "Atlanta",
+            "state": "GA",
+            "country": "USA",
+            "postalCode": "30318"
+        },
+        "coordinates": {
+            "latitude": 33.7946,
+            "longitude": -84.4488
+        },
+        "status": "ACTIVE",
+        "referenceId": "site-002"
+    },
+    {
+        "siteName": "Nova Sushi Bar",
+        "enterpriseUnitName": "site-003",
+        "description": "Sushi/Tempura/Asian foods/Tempura/Curry/Sashimi/Noodle",
+        "address": {
+            "street": "880 W Peachtree St NW",
+            "city": "Atlanta",
+            "state": "GA",
+            "country": "USA",
+            "postalCode": "30309"
+        },
+        "coordinates": {
+            "latitude": 33.7971,
+            "longitude": -84.3805
+        },
+        "status": "ACTIVE",
+        "referenceId": "site-003"
+    },
+    {
+        "siteName": "A.S.K. Tea",
+        "enterpriseUnitName": "site-005",
+        "description": "Boba Tea/Matcha/Coffee/Tea/Cake",
         "address": {
             "street": "1100 Spring St NW",
             "city": "Atlanta",
@@ -33,11 +69,48 @@
             "longitude": -84.3901220250066
         },
         "status": "ACTIVE",
-        "referenceId": "site-002"
-    }],
+        "referenceId": "site-005"
+    },
+    {
+        "siteName": "Honey Bubble",
+        "enterpriseUnitName": "site-005",
+        "description": "Boba Tea/Milk Tea/Macaron/Gelato/Cofee/Japenese Matcha",
+        "address": {
+            "street": "789 Ponce De Leon Ave NE",
+            "city": "Atlanta",
+            "state": "GA",
+            "country": "USA",
+            "postalCode": "30306"
+        },
+        "coordinates": {
+            "latitude": 33.7845,
+            "longitude": -84.3489
+        },
+        "status": "ACTIVE",
+        "referenceId": "site-005"
+    },
+    {
+        "siteName": "Blue Donkey Coffee Co.",
+        "enterpriseUnitName": "site-006",
+        "description": "Cold Brew/Boba Tea/Bubble Tea/Latte/Sandwiches",
+        "address": {
+            "street": "704 Cherry St NW",
+            "city": "Atlanta",
+            "state": "GA",
+            "country": "USA",
+            "postalCode": "30313"
+        },
+        "coordinates": {
+            "latitude": 33.7658,
+            "longitude": -84.3949
+        },
+        "status": "ACTIVE",
+        "referenceId": "site-006"
+    }
+    ],
     "customer_cite": [{
         "siteName": "HERE Atlanta",
-        "enterpriseUnitName": "site-003",
+        "enterpriseUnitName": "site-007",
         "description": "Student Apartment",
         "address": {
             "street": "699 Spring St NW",
@@ -51,7 +124,7 @@
             "longitude": -84.3885220250066
         },
         "status": "ACTIVE",
-        "referenceId": "site-003"
+        "referenceId": "site-007"
     }
     ],
     "customers": [
