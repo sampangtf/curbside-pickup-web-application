@@ -1,25 +1,25 @@
 import React, { useState, useEffect } from "react";
+import NavBar from "./components/NavBar";
+import Result from "./components/Result";
 
 function App() {
-  const [data, setData] = useState([{}]);
+  const [data, setData] = useState([[]]);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:5000/")
+    fetch("http://127.0.0.1:5000/search-results")
       .then((res) => res.json())
       .then((data) => {
-        setData(data);
+        setData(data["results"]);
         console.log(data);
       });
   }, []);
 
   return (
     <div>
-      <form action="">
-        <label htmlFor="">First Restaurant</label>
-        <input type="text" placeholder="Fried chicken" />
-        <label htmlFor="">Second Restaurant</label>
-        <input type="text" placeholder="Boba tea" />
-      </form>
+      <NavBar />
+      {data.map((result, i) => {
+        return <Result key={i} restaurants={result} />;
+      })}
     </div>
   );
 }
