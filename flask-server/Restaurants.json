@@ -1,0 +1,38 @@
+{
+    "restaurants": [{
+        "siteName": "Jane's Kitchen",
+        "enterpriseUnitName": "site-001",
+        "description": "Test Site for Postman Collection",
+        "address": {
+            "street": "799 Piedmont Ave NE",
+            "city": "Atlanta",
+            "state": "GA",
+            "country": "USA",
+            "postalCode": "30308"
+        },
+        "coordinates": {
+            "latitude": 33.77660305263519,
+            "longitude": -84.3810668872292
+        },
+        "status": "ACTIVE",
+        "referenceId": "site-001"
+    },
+    {
+        "siteName": "A.S.K. Tea",
+        "enterpriseUnitName": "site-002",
+        "description": "Best boba tea in Midtown Alanta!",
+        "address": {
+            "street": "1100 Spring St NW",
+            "city": "Atlanta",
+            "state": "GA",
+            "country": "USA",
+            "postalCode": "30308"
+        },
+        "coordinates": {
+            "latitude": 33.78478040632935,
+            "longitude": -84.3901220250066
+        },
+        "status": "ACTIVE",
+        "referenceId": "site-002"
+    }]
+}
