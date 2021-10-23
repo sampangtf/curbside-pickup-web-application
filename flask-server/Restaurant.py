@@ -6,7 +6,7 @@ def postRestaurants():
     url = "https://gateway-staging.ncrcloud.com/site/sites"
 
     restaurants = []
-    with open("Restaurants.json") as json_file:
+    with open("data.json") as json_file:
         data = json.load(json_file)
         for restaurant in data["restaurants"]:
             payload = json.dumps(restaurant)
