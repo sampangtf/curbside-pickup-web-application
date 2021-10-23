@@ -1,22 +1,46 @@
 from thefuzz import fuzz
+import json
+"""
+Install Libraries:
+pip install python-Levenshtein
+pip install thefuzz
+"""
 
 
-def SearchRestaurant(restaurant_list, input):
+def SearchRestaurant(input):
+
+    with open("Data.json") as json_file:
+
+        data = json.load(json_file)
+        menu_list = []
+        restaurants = data["restaurants"]
+        for restaurant in restaurants:
+            menu_list.append(restaurant['description'])
+        # for restaurant in data["restaurants"]:
+        #     payload = json.dumps(restaurant)
+        #     response = request(url, "POST", payload)
+        #     restaurants.append(response["data"])
+
     result = []
-    for i in restaurant_list:
-        if fuzz.token_set_ratio(i, input) == 100:
-            result.append(i)
-    print("Your search - " + input + """ - did not match any restaurants.\n
+    for i in range(len(menu_list)):
+        if fuzz.token_set_ratio(menu_list[i], input) == 100:
+            dict = {
+                'siteName': restaurants[i]['siteName'],
+                'description': restaurants[i]['description'],
+                'address': restaurants[i]['address']
+            }
+            result.append(dict)
+
+    if len(result) > 0:
+        return json.dumps(result)
+    else:
+        print("Your search - " + input + """ - did not match any restaurants.\n
 Suggestions:\n
 Make sure all words are spelled correctly.\n
 Try different keywords.\n
 Try more general keywords.""")
-    if len(result) > 0:
-        return result
-    else:
         return
 
 
-restaurant_list = ["Shake Shack", "Jane's Kitechen", "A.S.K Tea"]
-input = "Shake shack"
-print(SearchRestaurant(restaurant_list, input))
+input = "sushi"
+print(SearchRestaurant(input))
