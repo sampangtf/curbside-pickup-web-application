@@ -35,6 +35,25 @@
         "status": "ACTIVE",
         "referenceId": "site-002"
     }],
+    "customer_cite": [{
+        "siteName": "HERE Atlanta",
+        "enterpriseUnitName": "site-003",
+        "description": "Student Apartment",
+        "address": {
+            "street": "699 Spring St NW",
+            "city": "Atlanta",
+            "state": "GA",
+            "country": "USA",
+            "postalCode": "30308"
+        },
+        "coordinates": {
+            "latitude": 33.77378040632935,
+            "longitude": -84.3885220250066
+        },
+        "status": "ACTIVE",
+        "referenceId": "site-003"
+    }
+    ],
     "customers": [
         {
             "profileUsername": "jshi351@gatech.edu",
