@@ -16,7 +16,6 @@ def PostCustomers():
             payload = json.dumps(customer)
             response = request(url, "POST", payload)
             customers.append(response["data"])
-            print(response["data"])
     return customers
 
 
@@ -50,7 +49,7 @@ def createCustomer(profileUsername, mobile, line1, line2, city, state, postalCod
     )
 
     response = request(url, "POST", payload)
-    print(response["data"])
+    # print(response["data"])
 
 
 def CreateCustomAttributeSet():
