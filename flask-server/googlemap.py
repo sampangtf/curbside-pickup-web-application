@@ -1,6 +1,7 @@
 import requests
 import urllib3
 from urllib.parse import quote
+from itertools import permutations
 
 api_key = "AIzaSyBaFmPjFOZznxmoi9f7pEmyCYit2Si8YGk"
 
@@ -19,29 +20,29 @@ def distance_matrix(origin, destination_list, depature_time = "now"):
     # distance_matrix = response.json()
     return response.json()
 
-def best_routes(origin, destination_list, distance_matrix):
+def best_routes(origin, destination_list):
     min_time = 1e99
     min_idx = -1
-    npossible_routes = 2
-    for idx in range(npossible_routes):
-        traveltime = distance_matrix['rows'][0]['elements'][idx]['duration']['value']
-        if traveltime < min_time:
-            min_time = traveltime
-            min_idx = idx
+    # npossible_routes = 2
 
-    #####################
-    routes = []
+    possible_routes = list(permutations(destination_list))
+    total_traveltime_list = []
+    for route in possible_routes:
+        traveltime = 0
+        traveltime = distance_matrix(origin, route[0])['rows'][0]['elements'][0]['duration']['value'] #first leg
+        for idx, destination in enumerate(route[0:-1]):
+            traveltime += distance_matrix(route[idx], route[idx+1])['rows'][0]['elements'][0]['duration']['value']
+        total_traveltime_list.append(traveltime)
+    sorted_routes = sorted(possible_routes, key = lambda x:total_traveltime_list[possible_routes.index(x)])
+    sorted_traveltime_list = sorted(total_traveltime_list)
 
-    first_destination_address = distance_matrix['destination_addresses'][min_idx]
-    first_destination_name = destination_list[min_idx]
-    second_idx = [idx for idx in range(npossible_routes) if idx != min_idx][0]
-    second_destination_address = distance_matrix['destination_addresses'][second_idx]
-    second_destination_name = destination_list[second_idx]
+    print(possible_routes, total_traveltime_list)
 
-    routes.append((origin, first_destination_name))
-    routes.append((first_destination_name, second_destination_name))
+    best_route = sorted_routes[0]
+    travel_time = sorted_traveltime_list[0]
 
-    return routes
+    return best_route, travel_time
+    
 
 def finding_directions(routes):
     directions_response = []
