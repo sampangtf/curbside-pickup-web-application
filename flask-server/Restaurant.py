@@ -27,3 +27,4 @@ def getRestaurants():
 
 
 print(getRestaurants())
+postRestaurants()

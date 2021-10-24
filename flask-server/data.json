@@ -15,7 +15,6 @@
             "longitude": -84.3726
         },
         "status": "ACTIVE",
-        "customAttributeSets":"3.5",
         "referenceId": "site-001"
     },
     {
@@ -34,7 +33,6 @@
             "longitude": -84.4488
         },
         "status": "ACTIVE",
-        "customAttributeSets":"4.5",
         "referenceId": "site-002"
     },
     {
@@ -53,7 +51,6 @@
             "longitude": -84.3805
         },
         "status": "ACTIVE",
-        "customAttributeSets":"4.4",
         "referenceId": "site-003"
     },
     {
@@ -72,7 +69,6 @@
             "longitude": -84.3901220250066
         },
         "status": "ACTIVE",
-        "customAttributeSets":"3.9",
         "referenceId": "site-005"
     },
     {
@@ -91,7 +87,6 @@
             "longitude": -84.3489
         },
         "status": "ACTIVE",
-        "customAttributeSets":"4.5",
         "referenceId": "site-005"
     },
     {
@@ -110,7 +105,6 @@
             "longitude": -84.3949
         },
         "status": "ACTIVE",
-        "customAttributeSets":"4.8",
         "referenceId": "site-006"
     }
     ],

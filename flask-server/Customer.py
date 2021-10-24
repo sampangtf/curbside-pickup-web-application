@@ -29,13 +29,13 @@ def GetCustomer():
 
 
 def createCustomer(profileUsername, mobile, line1, line2, city, state, postalCode):
-    url = "https://gateway-staging.ncrcloud.com/cdm/consumers"
+    url = "https://gateway-staging.ncrcloud.com/cdm/consumers/"
 
     payload = json.dumps(
         {
             "profileUsername": profileUsername,
             "mobile": mobile,
-            "address": [
+            "addresses": [
                 {
                     "name": "Home",
                     "line1": line1,
@@ -49,7 +49,7 @@ def createCustomer(profileUsername, mobile, line1, line2, city, state, postalCod
     )
 
     response = request(url, "POST", payload)
-    # print(response["data"])
+    return response["data"]
 
 
 def CreateCustomAttributeSet():
@@ -63,6 +63,7 @@ def CreateCustomAttributeSet():
 
 
 # print(CreateCustomAttributeSet())
-# createCustomer("a00", "1112223039", "99 St Ne", "805", "Atlanta", "GA", "30308")
-# PostCustomers()
+PostCustomers()
 # GetCustomer()
+# customer = createCustomer("0009", "7192445555", "99", "00", "Atlanta", "GA", "30308")
+# print(customer)

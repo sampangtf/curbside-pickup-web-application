@@ -3,6 +3,7 @@ from hmacHelper import request
 from Customer import GetCustomer
 
 customer = GetCustomer()
+customerID = customer["consumerAccountNumber"]
 orderID = "11920734258000737729"
 
 
@@ -10,14 +11,21 @@ def placeOrder(customer):
     url = "https://gateway-staging.ncrcloud.com/order/3/orders/1"
     payload = json.dumps({"customer": customer, "status": "OrderPlaced"})
     response = request(url, "POST", payload)
-    print(response["data"])
+    # print(response["data"])
 
 
-def getOrder(orderID):
+def getOrderByID(orderID):
     url = "https://gateway-staging.ncrcloud.com/order/3/orders/1/" + orderID
     response = request(url, "GET", {})
     return response["data"]
 
 
-order = getOrder(orderID)
-print(order)
+def getOrderByCustomerID(customerID):
+    url = "https://gateway-staging.ncrcloud.com/order/3/orders/1/find"
+    payload = json.dumps({"consumerID": customerID})
+    response = request(url, "POST", payload)
+
+
+# order = getOrderByID(orderID)
+# print(order)
+getOrderByCustomerID(customerID)
