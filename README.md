@@ -1,5 +1,5 @@
 # hackgt
-### Challenge: NCR's BSP APIs
+#### Challenge: NCR's BSP APIs
 
 ## Motivation
 Our team attempts to explore innovation applications in a world that is significantly impacted by **COVID-19**. The food hospitality industry, which is traditioanlly dominated by dine-in services, witnesses an enormouse increase in demands of contact-free services such as delivery and curbside pickup. While delivery is supported by a wide range of awesome apps such as DoorDash and UberEats, there hasn't been a lot applications that are specifically curtailed to **curbside pickup**. This shortage inspires our idea to use BSP APIs to create something as part of the HackGT 8 challenge.
