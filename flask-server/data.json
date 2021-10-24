@@ -15,21 +15,6 @@
             "longitude": -84.3726
         },
         "status": "ACTIVE",
-        "attribute": [
-            {
-              "typeName": "myCustomAttributeSetName",
-              "attribute": [
-                {
-                  "key": "Rating",
-                  "value": "3.3"
-                },
-                {
-                  "key": "NumOfRatings",
-                  "value": "500"
-                }
-              ]
-            }
-          ],
         "referenceId": "site-001"
     },
     {
@@ -48,7 +33,6 @@
             "longitude": -84.4488
         },
         "status": "ACTIVE",
-        "customAttributeSets":"4.5",
         "referenceId": "site-002"
     },
     {
@@ -67,7 +51,6 @@
             "longitude": -84.3805
         },
         "status": "ACTIVE",
-        "customAttributeSets":"4.4",
         "referenceId": "site-003"
     },
     {
@@ -86,7 +69,6 @@
             "longitude": -84.3901220250066
         },
         "status": "ACTIVE",
-        "customAttributeSets":"3.9",
         "referenceId": "site-005"
     },
     {
@@ -105,7 +87,6 @@
             "longitude": -84.3489
         },
         "status": "ACTIVE",
-        "customAttributeSets":"4.5",
         "referenceId": "site-005"
     },
     {
@@ -124,65 +105,7 @@
             "longitude": -84.3949
         },
         "status": "ACTIVE",
-        "customAttributeSets":"4.8",
         "referenceId": "site-006"
-    },
-    {
-        "siteName": "Taco & Tequilas",
-        "enterpriseUnitName": "site-007",
-        "description": "Taco/Fajitas/Carnitas/Quesadilla/Tortilla/Salsa",
-        "address": {
-            "street": "650 Ponce De Leon Ave NE",
-            "city": "Atlanta",
-            "state": "GA",
-            "country": "USA",
-            "postalCode": "30308"
-        },
-        "coordinates": {
-            "latitude": 33.7717,
-            "longitude": -84.3726
-        },
-        "status": "ACTIVE",
-        "customAttributeSets":"4.5",
-        "referenceId": "site-007"
-    },
-    {
-        "siteName": "Rreal Tacos",
-        "enterpriseUnitName": "site-008",
-        "description": "Wine/Beer/Tacos/Burrito/Burrito bowl/Quesadilla/Salad",
-        "address": {
-            "street": "100 6th St NE #100",
-            "city": "Atlanta",
-            "state": "GA",
-            "country": "USA",
-            "postalCode": "30308"
-        },
-        "coordinates": {
-            "latitude": 33.7717,
-            "longitude": -84.3726
-        },
-        "status": "ACTIVE",
-        "customAttributeSets":"4.5",
-        "referenceId": "site-008"
-    },
-    {
-        "siteName": "Taco Bell",
-        "enterpriseUnitName": "site-009",
-        "description": "Tacos/Nachos/Quesadilla/Chips/Salsa/Taquito",
-        "address": {
-            "street": "930 Spring St NW",
-            "city": "Atlanta",
-            "state": "GA",
-            "country": "USA",
-            "postalCode": "30309"
-        },
-        "coordinates": {
-            "latitude": 33.7971,
-            "longitude": -84.3805
-        },
-        "status": "ACTIVE",
-        "customAttributeSets":"4.5",
-        "referenceId": "site-009"
     }
     ],
     "customer_cite": [{
@@ -206,7 +129,7 @@
     ],
     "customers": [
         {
-            "profileUsername": "jshi351@hackgt.edu",
+            "profileUsername": "jshi351@gatech.edu",
             "salutation": "Ms",
             "firstName": "Kira",
             "middleName": "a",
@@ -214,12 +137,12 @@
             "effectiveDate": "2018-01-20",
             "birthDate": "1997-07-22",
             "gender": "Female",
-            "phone": "9989989998",
-            "mobile": "3343343334",
+            "phone": "3748394433",
+            "mobile": "4857723900",
             "fax": "2280001234",
             "identity": "identity",
-            "homeStore": "012345678900",
-            "socialSecurityNumber": "1246",
+            "homeStore": "0123456789",
+            "socialSecurityNumber": "1245",
             "addresses": [{
                 "name": "Home",
                 "line1": "699 Spring St NW",
@@ -232,7 +155,7 @@
             }],
             "identifiersData": [{
                 "fieldName": "loyaltyCard",
-                "fieldValue": "12345678910",
+                "fieldValue": "1234567891",
                 "status": "ACTIVE"
             }]
         }
@@ -245,13 +168,13 @@
         "fields": [
           {
             "description": "Indicates the rating of a restaurant.",
-            "fieldName": "Rating",
-            "fieldType": "NUMBER"
+            "fieldName": "Ratings",
+            "fieldType": "Number"
           },
           {
             "description": "Specifies the number of ratings.",
             "fieldName": "NumOfRatings",
-            "fieldType": "NUMBER"
+            "fieldType": "Number"
           }
         ]
       }

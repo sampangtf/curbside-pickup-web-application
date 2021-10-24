@@ -6,6 +6,7 @@ import NoResult from "./components/NoResult";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
+  const [customer, setCustomer] = useState({});
   const [keywords, setKeywords] = useState(["", ""]);
   const [searchResults, setSearchResults] = useState([[]]);
 
@@ -19,13 +20,24 @@ function App() {
       });
   };
 
-  const login = () => {
+  const start = () => {
     // createCustomer();
     setLoggedIn(true);
     startSearch();
   };
 
-  // const createCustomer = () => {};
+  const createCustomer = () => {
+    const url = `http://127.0.0.1:5000/customers?profileUsername=${customer.profileUsername}&mobile=${customer.mobile}&line1=${customer.line1}&line2=${customer.line2}&city=${customer.city}&state=${customer.state}&postalCode=${customer.postalCode}`;
+    console.log(url);
+
+    fetch(url)
+      .then((res) => {
+        console.log(typeof res);
+        console.log(res);
+        res.json();
+      })
+      .then((data) => console.log(data["results"]));
+  };
 
   return (
     <div>
@@ -33,7 +45,9 @@ function App() {
         <Start
           keywords={keywords}
           onKeywordInput={setKeywords}
-          onSubmit={login}
+          customer={customer}
+          setCustomer={setCustomer}
+          onSubmit={start}
         />
       ) : (
         <div>
