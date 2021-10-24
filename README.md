@@ -14,12 +14,12 @@ This is precisely where our web application comes in. Given a list of multiple k
 1. Create account
 2. Enter keywords for multiple search (for example, "sushi" + "boba")
 
-![alt text](https://github.com/charlie-nik/hackgt/blob/main/images/start.png?raw=true)
+<img src="https://github.com/charlie-nik/hackgt/blob/main/images/start.png?raw=true" width=800>
 
 3. Browse the ranked combinations of the two sets of search results
 4. Choose a combination and place an order on all restaurants in it
 
-![alt text](https://github.com/charlie-nik/hackgt/blob/main/images/order.png?raw=true)
+<img src="https://github.com/charlie-nik/hackgt/blob/main/images/order.png?raw=true" width=800>
 
 5. Get out and get delicious :car:!
 
