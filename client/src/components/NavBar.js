@@ -1,18 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import "./NavBar.css";
 
-function NavBar() {
-  const [keywords, setKeyWords] = useState(["", ""]);
-
-  const handleClick = () => {
-    console.log(keywords);
-  };
-
+function NavBar(props) {
   return (
-    <nav
-      className="navbar navbar-expand-md navbar-dark bg-dark"
-      aria-label="Fourth navbar example"
-    >
+    <nav className="navbar navbar-expand-md navbar-dark bg-dark">
       <div className="container-fluid">
         <a className="navbar-brand" href="/">
           Expand at md
@@ -40,8 +31,10 @@ function NavBar() {
                 className="form-control"
                 type="text"
                 placeholder="First Restaurant"
-                value={keywords[0]}
-                onInput={(e) => setKeyWords([e.target.value, keywords[1]])}
+                value={props.keywords[0]}
+                onInput={(e) =>
+                  props.onKeywordInput([e.target.value, props.keywords[1]])
+                }
               />
             </li>
             <li className="nav-item">
@@ -49,8 +42,10 @@ function NavBar() {
                 className="form-control"
                 type="text"
                 placeholder="Second Restaurant"
-                value={keywords[1]}
-                onInput={(e) => setKeyWords([keywords[0], e.target.value])}
+                value={props.keywords[1]}
+                onInput={(e) =>
+                  props.onKeywordInput([props.keywords[0], e.target.value])
+                }
               />
             </li>
             <li>
@@ -60,7 +55,7 @@ function NavBar() {
             <li>
               <button
                 className="btn btn-large btn-primary"
-                onClick={handleClick}
+                onClick={props.onSubmit}
               >
                 Search
               </button>

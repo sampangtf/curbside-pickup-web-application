@@ -2,14 +2,14 @@ import requests
 import urllib3
 from urllib.parse import quote
 
-
+api_key = "AIzaSyBaFmPjFOZznxmoi9f7pEmyCYit2Si8YGk"
 
 def distance_matrix(origin, destination_list, depature_time = "now"):
     origin = quote(origin)
     if len(destination_list) == 1:
         destination = quote(destination_list[0])
     else:
-        destination = quote("|".join(destination_list))
+        destination = quote(str("|".join(destination_list)))
 
     url = f"https://maps.googleapis.com/maps/api/distancematrix/json?origins={origin}&destinations={destination}&departure_time={depature_time}&key={api_key}"
 
