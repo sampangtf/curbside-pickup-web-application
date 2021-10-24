@@ -1,16 +1,70 @@
-.restaurant-card {
-    display: inline-block;
-
-}
-
 body {
     background-image: linear-gradient(180deg, #eee, #fff 100px, #fff);
 }
-  
-.container {
-    max-width: 960px;
+
+.cards {
+    padding-left: 20px;
+    height: 230px;
+    border: none;
 }
-  
-.pricing-header {
-    max-width: 700px;
+
+.text-center {
+    border: none;
+}
+
+.card {
+    text-align: left;
+    height: 230px;
+    /* border: dotted 2px; */
+    margin-bottom: 10px;
+
+}
+
+/* .border-between > [class*='col-']:before {
+    background: #000;
+    bottom: 0;
+    content: " ";
+    left: 0;
+    position: absolute;
+    width: 1px;
+    top: 0;
+ }
+ 
+.border-between > [class*='col-']:first-child:before {
+    display: none;
+} */
+
+.index{
+    font-size: 0.9rem;
+    margin-bottom: 2px;
+    font-weight: bold;
+    color: red;
+}
+
+.card-title {
+    text-align: left;
+}
+
+.restaurant-name {
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.rating {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: green;
+}
+
+.details {
+    margin-bottom: 20px;
+}
+
+.details-text {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+}
+
+.order {
+    padding-top: 50px;
 }

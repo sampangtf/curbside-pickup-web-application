@@ -1,9 +1,11 @@
 import json
+
+import requests
 from hmacHelper import request
 
 
-def CreateCustomer():
-    url = "https://api.ncr.com/cdm/consumers"
+def PostCustomers():
+    url = "https://gateway-staging.ncrcloud.com/cdm/consumers"
 
     customers = []
     with open("data.json") as json_file:
@@ -15,14 +17,39 @@ def CreateCustomer():
     return customers
 
 
+def createCustomer(profileUsername, mobile, line1, line2, city, state, postalCode):
+    url = "https://gateway-staging.ncrcloud.com/cdm/consumers"
+
+    payload = json.dumps(
+        {
+            "profileUsername": profileUsername,
+            "mobile": mobile,
+            "address": [
+                {
+                    "name": "Home",
+                    "line1": line1,
+                    "line2": line2,
+                    "city": city,
+                    "state": state,
+                    "postalCode": postalCode,
+                }
+            ],
+        }
+    )
+
+    response = request(url, "POST", payload)
+    print(response["data"])
+
+
 def CreateCustomAttributeSet():
-    url = "https://api.ncr.com/site/v1/extensions"
+    url = "https://gateway-staging.ncrcloud.com/site/v1/extensions"
     with open("data.json") as json_file:
         data = json.load(json_file)
-        payload = data['custom attribute']
+        payload = data["custom attribute"]
         print(payload)
     response = request(url, "POST", payload)
     return response
 
 
-print(CreateCustomAttributeSet())
+# print(CreateCustomAttributeSet())
+createCustomer("a00", "1112223039", "99 St Ne", "805", "Atlanta", "GA", "30308")
