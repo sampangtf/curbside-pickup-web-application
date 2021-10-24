@@ -135,7 +135,7 @@
     ],
     "customers": [
         {
-            "profileUsername": "jshi351@gatech.edu",
+            "profileUsername": "jshi351@hackgt.edu",
             "salutation": "Ms",
             "firstName": "Kira",
             "middleName": "a",
@@ -143,12 +143,12 @@
             "effectiveDate": "2018-01-20",
             "birthDate": "1997-07-22",
             "gender": "Female",
-            "phone": "3748394433",
-            "mobile": "4857723900",
+            "phone": "9989989998",
+            "mobile": "3343343334",
             "fax": "2280001234",
             "identity": "identity",
-            "homeStore": "0123456789",
-            "socialSecurityNumber": "1245",
+            "homeStore": "012345678900",
+            "socialSecurityNumber": "1246",
             "addresses": [{
                 "name": "Home",
                 "line1": "699 Spring St NW",
@@ -161,7 +161,7 @@
             }],
             "identifiersData": [{
                 "fieldName": "loyaltyCard",
-                "fieldValue": "1234567891",
+                "fieldValue": "12345678910",
                 "status": "ACTIVE"
             }]
         }

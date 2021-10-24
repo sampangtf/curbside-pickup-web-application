@@ -2,6 +2,8 @@ import json
 import requests
 from hmacHelper import request
 
+# response["data"]["consumerAccountNumber"]
+
 
 def PostCustomers():
     url = "https://gateway-staging.ncrcloud.com/cdm/consumers"
@@ -13,12 +15,13 @@ def PostCustomers():
             payload = json.dumps(customer)
             response = request(url, "POST", payload)
             customers.append(response["data"])
+            print(response["data"])
     return customers
 
 
 def GetCustomer():
     requestURL = "https://gateway-staging.ncrcloud.com/cdm/consumers/"
-    accountNumber = "2JPOAAUBWC1FMQTP"
+    accountNumber = "XWEKRJFOKNNJRDOA"
     httpMethod = "GET"
     payload = {}
     res = request(requestURL + accountNumber, httpMethod, payload)
@@ -61,4 +64,6 @@ def CreateCustomAttributeSet():
 
 
 # print(CreateCustomAttributeSet())
-createCustomer("a00", "1112223039", "99 St Ne", "805", "Atlanta", "GA", "30308")
+# createCustomer("a00", "1112223039", "99 St Ne", "805", "Atlanta", "GA", "30308")
+PostCustomers()
+# GetCustomer()
