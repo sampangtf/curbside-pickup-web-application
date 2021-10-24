@@ -4,18 +4,16 @@ from flask_cors import CORS
 from Restaurant import postRestaurants, getRestaurants
 from Customer import createCustomer
 from fuzzsearch import SearchRestaurant
-<<<<<<< HEAD
 from Order import placeOrder, getOrderByID, getOrderByCustomerID
-=======
 from Ranking import restaurant_rank
 import json
->>>>>>> 60217ed42402bdab52f76bed1cd7dad34595c10c
 
 app = Flask(__name__)
 CORS(app)
 
 restaurants = getRestaurants()
-origin = json.load('data.json')['customer_cite'][0]['siteName']
+origin = json.load("data.json")["customer_cite"][0]["siteName"]
+
 
 @app.route("/restaurants", methods=["GET"])
 def getRestaurants():
@@ -65,7 +63,6 @@ def searchResults():
 
     if type(results_list_1) == str or type(results_list_2) == str:
         return {"results": results_list_1}
-    
 
     combinations = []
     for r1 in results_list_1:
@@ -74,7 +71,6 @@ def searchResults():
         else:
             for r2 in results_list_2:
                 combinations.append([r1, r2])
-    
 
     return {"results": combinations}
 
