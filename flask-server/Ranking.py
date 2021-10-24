@@ -26,12 +26,17 @@ def combination_ranking(combinations, origin):
         #rating_list = [(float(res[-2]), int(res[-1])) for res in descriptions]
         rating_list = []
         for res in combination:
-            for attribute in res['customAttributeSets'][0]['attributes']:
-                if attribute['key'] == 'rating':
-                    rating = attribute['value']
-                elif attribute['key'] == 'numofratings':
-                    norating = attribute['value']
-            rating_list.append((float(rating), int(norating)))
+            try:
+                for attribute in res['customAttributeSets'][0]['attributes']:
+                    print(attribute)
+                    if attribute['key'] == 'rating':
+                        rating = attribute['value']
+                    elif attribute['key'] == 'numofratings':
+                        norating = attribute['value']
+                rating_list.append((float(rating), int(norating)))
+            except:
+                rating_list.append((2.5, 0))
+            print(rating_list)
         # rating_list = [(float(res['customAttributeSets'][0]['attributes'][0]['value']), \
         #      float(res['customAttributeSets'][0]['attributes'][1]['value'])) \
         #     for res in combination]
