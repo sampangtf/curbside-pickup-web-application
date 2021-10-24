@@ -26,7 +26,7 @@ def SearchRestaurant(input):
     for restaurant in restaurants:
         menu_list.append(restaurant["description"])
 
-    print(menu_list)
+    # print(menu_list)
     result = []
     for i in range(len(menu_list)):
         if fuzz.token_set_ratio(menu_list[i], input) == 100:
@@ -34,6 +34,7 @@ def SearchRestaurant(input):
                 "siteName": restaurants[i]["siteName"],
                 "description": restaurants[i]["description"],
                 "address": restaurants[i]["address"],
+                "customAttributeSets": restaurants[i]["customAttributeSets"]
             }
             result.append(restaurants[i])
 
