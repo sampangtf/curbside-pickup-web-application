@@ -12,7 +12,7 @@ def combination_ranking(combinations, origin):
     for combination in combinations_copy:
         destination_list = [res['siteName'] for res in combination]
 
-        _distance_matrix = distance_matrix(origin=origin, destination_list=destination_list, depature_time = "now")
+        # _distance_matrix = distance_matrix(origin=origin, destination_list=destination_list, depature_time = "now")
 
         ####Getting Travel Time Score
        
@@ -66,8 +66,8 @@ def combination_ranking(combinations, origin):
    
     # sorted_combinations = [sorted(res, key = res['overall_score']) for res in combinations_copy]
     sorted_combinations = json.dumps(sorted(combinations_copy, key = lambda x: combination_score[combinations_copy.index(x)], reverse =True))
-    sorted_combination_score = sorted(combination_score)
-    sorted_total_traveltime_list = sorted(total_traveltime_list, key = lambda x: combination_score[total_traveltime_list.index(x)], reverse =True)
+    # sorted_combination_score = sorted(combination_score)
+    # sorted_total_traveltime_list = sorted(total_traveltime_list, key = lambda x: combination_score[total_traveltime_list.index(x)], reverse =True)
     sorted_weighted_rating_list = sorted(weighted_rating_list, key = lambda x: combination_score[weighted_rating_list.index(x)])
     # sorted_weighted_score_dict = {k:v for k,v in sorted(weighted_score_dict.items(), key=lambda item: item[1])}
     
