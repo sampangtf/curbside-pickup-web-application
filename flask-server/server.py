@@ -5,6 +5,8 @@ from Restaurant import postRestaurants, getRestaurants
 from Customer import createCustomer
 from fuzzsearch import SearchRestaurant
 from Order import placeOrder, getOrderByID, getOrderByCustomerID
+from Ranking import combination_ranking
+
 
 # from Ranking import restaurant_rank
 import json
@@ -13,7 +15,7 @@ app = Flask(__name__)
 CORS(app)
 
 restaurants = getRestaurants()
-# origin = json.load("data.json")["customer_cite"][0]["siteName"]
+
 
 
 @app.route("/restaurants", methods=["GET"])
@@ -72,8 +74,12 @@ def searchResults():
         else:
             for r2 in results_list_2:
                 combinations.append([r1, r2])
-
-    return {"results": combinations}
+    
+    with open("data.json") as json_file:
+        data = json.load(json_file)
+        origin = data["customer_cite"][0]['siteName']
+    sorted_combinations, total_traveltime_list, routes, weighted_rating_list = combination_ranking(combinations, origin)
+    return {"results": sorted_combinations}
 
 
 @app.route("/orders", methods=["POST", "GET"])
