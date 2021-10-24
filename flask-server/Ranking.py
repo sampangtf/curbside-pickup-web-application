@@ -17,7 +17,7 @@ def combination_ranking(combinations, origin):
         ####Getting Travel Time Score
        
         #route, total_traveltime = best_routes(origin, destination_list)
-        r#outes.append(route)
+        #routes.append(route)
         # total_traveltime_list.append(total_traveltime)
         # traveltime_score_list.append(1 / total_traveltime)
 
