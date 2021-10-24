@@ -15,7 +15,21 @@
             "longitude": -84.3726
         },
         "status": "ACTIVE",
-        "customAttributeSets":"3.5",
+        "attribute": [
+            {
+              "typeName": "myCustomAttributeSetName",
+              "attribute": [
+                {
+                  "key": "Rating",
+                  "value": "3.3"
+                },
+                {
+                  "key": "NumOfRatings",
+                  "value": "500"
+                }
+              ]
+            }
+          ],
         "referenceId": "site-001"
     },
     {
@@ -112,6 +126,63 @@
         "status": "ACTIVE",
         "customAttributeSets":"4.8",
         "referenceId": "site-006"
+    },
+    {
+        "siteName": "Taco & Tequilas",
+        "enterpriseUnitName": "site-007",
+        "description": "Taco/Fajitas/Carnitas/Quesadilla/Tortilla/Salsa",
+        "address": {
+            "street": "650 Ponce De Leon Ave NE",
+            "city": "Atlanta",
+            "state": "GA",
+            "country": "USA",
+            "postalCode": "30308"
+        },
+        "coordinates": {
+            "latitude": 33.7717,
+            "longitude": -84.3726
+        },
+        "status": "ACTIVE",
+        "customAttributeSets":"4.5",
+        "referenceId": "site-007"
+    },
+    {
+        "siteName": "Rreal Tacos",
+        "enterpriseUnitName": "site-008",
+        "description": "Wine/Beer/Tacos/Burrito/Burrito bowl/Quesadilla/Salad",
+        "address": {
+            "street": "100 6th St NE #100",
+            "city": "Atlanta",
+            "state": "GA",
+            "country": "USA",
+            "postalCode": "30308"
+        },
+        "coordinates": {
+            "latitude": 33.7717,
+            "longitude": -84.3726
+        },
+        "status": "ACTIVE",
+        "customAttributeSets":"4.5",
+        "referenceId": "site-008"
+    },
+    {
+        "siteName": "Taco Bell",
+        "enterpriseUnitName": "site-009",
+        "description": "Tacos/Nachos/Quesadilla/Chips/Salsa/Taquito",
+        "address": {
+            "street": "930 Spring St NW",
+            "city": "Atlanta",
+            "state": "GA",
+            "country": "USA",
+            "postalCode": "30309"
+        },
+        "coordinates": {
+            "latitude": 33.7971,
+            "longitude": -84.3805
+        },
+        "status": "ACTIVE",
+        "customAttributeSets":"4.5",
+        "referenceId": "site-009"
     }
     ],
     "customer_cite": [{
@@ -174,7 +245,7 @@
         "fields": [
           {
             "description": "Indicates the rating of a restaurant.",
-            "fieldName": "Ratings",
+            "fieldName": "Rating",
             "fieldType": "NUMBER"
           },
           {
