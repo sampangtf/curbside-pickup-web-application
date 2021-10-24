@@ -129,7 +129,7 @@
     ],
     "customers": [
         {
-            "profileUsername": "jshi351@hackgt.edu",
+            "profileUsername": "jshi351@gatech.edu",
             "salutation": "Ms",
             "firstName": "Kira",
             "middleName": "a",
@@ -137,12 +137,12 @@
             "effectiveDate": "2018-01-20",
             "birthDate": "1997-07-22",
             "gender": "Female",
-            "phone": "9989989998",
-            "mobile": "3343343334",
+            "phone": "3748394433",
+            "mobile": "4857723900",
             "fax": "2280001234",
             "identity": "identity",
-            "homeStore": "012345678900",
-            "socialSecurityNumber": "1246",
+            "homeStore": "0123456789",
+            "socialSecurityNumber": "1245",
             "addresses": [{
                 "name": "Home",
                 "line1": "699 Spring St NW",
@@ -155,7 +155,7 @@
             }],
             "identifiersData": [{
                 "fieldName": "loyaltyCard",
-                "fieldValue": "12345678910",
+                "fieldValue": "1234567891",
                 "status": "ACTIVE"
             }]
         }
@@ -169,12 +169,12 @@
           {
             "description": "Indicates the rating of a restaurant.",
             "fieldName": "Ratings",
-            "fieldType": "NUMBER"
+            "fieldType": "Number"
           },
           {
             "description": "Specifies the number of ratings.",
             "fieldName": "NumOfRatings",
-            "fieldType": "NUMBER"
+            "fieldType": "Number"
           }
         ]
       }
