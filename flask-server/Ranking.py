@@ -1,5 +1,6 @@
 from googlemap import distance_matrix, best_routes
 import copy
+import json
 
 def combination_ranking(combinations, origin):
     combinations_copy = copy.deepcopy(combinations)
@@ -23,9 +24,17 @@ def combination_ranking(combinations, origin):
         ####Getting Rating
         #descriptions = [res['description'].split('/') for res in combination]
         #rating_list = [(float(res[-2]), int(res[-1])) for res in descriptions]
-        rating_list = [(float(res['customAttributeSets'][0]['attributes'][0]['value']), \
-             float(res['customAttributeSets'][0]['attributes'][1]['value'])) \
-            for res in combination]
+        rating_list = []
+        for res in combination:
+            for attribute in ['customAttributeSets'][0]['attributes']:
+                if attribute['key'] == 'rating':
+                    rating = attribute['value']
+                elif attribute['key'] == 'numofratings':
+                    norating = attribute['value']
+            rating_list.append((float(rating), int(norating)))
+        # rating_list = [(float(res['customAttributeSets'][0]['attributes'][0]['value']), \
+        #      float(res['customAttributeSets'][0]['attributes'][1]['value'])) \
+        #     for res in combination]
         #print(rating_list)
         total_norating = sum([float(norating) for (rating, norating) in rating_list])
         weighted_rating = [rating * (norating/total_norating) for rating, norating in rating_list]
@@ -55,12 +64,15 @@ def combination_ranking(combinations, origin):
   
    
     # sorted_combinations = [sorted(res, key = res['overall_score']) for res in combinations_copy]
-    sorted_combinations = sorted(combinations_copy, key = lambda x: combination_score[combinations_copy.index(x)], reverse =True)
+    sorted_combinations = json.dumps(sorted(combinations_copy, key = lambda x: combination_score[combinations_copy.index(x)], reverse =True))
     sorted_combination_score = sorted(combination_score)
     sorted_total_traveltime_list = sorted(total_traveltime_list, key = lambda x: combination_score[total_traveltime_list.index(x)], reverse =True)
     sorted_weighted_rating_list = sorted(weighted_rating_list, key = lambda x: combination_score[weighted_rating_list.index(x)])
     # sorted_weighted_score_dict = {k:v for k,v in sorted(weighted_score_dict.items(), key=lambda item: item[1])}
     
+    # info_dict = dict()
+    # info_dict = {for name, traveltime, route, rating in zip()}
+
     return sorted_combinations, total_traveltime_list, routes, weighted_rating_list
 
 
