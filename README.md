@@ -28,6 +28,7 @@ This is precisely where our web application comes in. Our “bundling” option 
 * CDM API
 * Site API (including Custom Attribute)
 * Order API
+* (Menu) (Applicable for our usecase, but currently some of the functions are not available for the NCR BSP API Challenge)
 
 ## Tools
 * Backend: ```Python``` ```Flask```
