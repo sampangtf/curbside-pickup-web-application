@@ -15,10 +15,14 @@ def CreateCustomer():
     return customers
 
 
-def GetCustomer():
-    requestURL = "https://api.ncr.com/cdm/consumers/"
-    accountNumber = "2JPOAAUBWC1FMQTP"
-    httpMethod = "GET"
-    payload = {}
-    res = request(requestURL + accountNumber, httpMethod, payload)
-    return res["data"]
+def CreateCustomAttributeSet():
+    url = "https://api.ncr.com/site/v1/extensions"
+    with open("data.json") as json_file:
+        data = json.load(json_file)
+        payload = data['custom attribute']
+        print(payload)
+    response = request(url, "POST", payload)
+    return response
+
+
+print(CreateCustomAttributeSet())
