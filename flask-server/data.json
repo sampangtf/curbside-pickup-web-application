@@ -175,12 +175,12 @@
           {
             "description": "Indicates the rating of a restaurant.",
             "fieldName": "Ratings",
-            "fieldType": "Number"
+            "fieldType": "NUMBER"
           },
           {
             "description": "Specifies the number of ratings.",
             "fieldName": "NumOfRatings",
-            "fieldType": "Number"
+            "fieldType": "NUMBER"
           }
         ]
       }
