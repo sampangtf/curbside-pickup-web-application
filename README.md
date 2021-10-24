@@ -12,11 +12,11 @@ This is precisely where our web application comes in. Given a list of multiple k
 
 ## Flow
 1. Create account
-![alt text](https://github.com/charlie-nik/hackgt/blob/main/images/start.png?raw=true)
 2. Enter keywords for multiple search (for example, "sushi" + "boba")
+![alt text](https://github.com/charlie-nik/hackgt/blob/main/images/start.png?raw=true)
 3. Browse the ranked combinations of the two sets of search results
-![alt text](https://github.com/charlie-nik/hackgt/blob/main/images/order.png?raw=true)
 4. Choose a combination and place an order on all restaurants in it
+![alt text](https://github.com/charlie-nik/hackgt/blob/main/images/order.png?raw=true)
 5. Get out and get delicious :car:!
 
 ## BSP APIs
