@@ -1,4 +1,5 @@
 import json
+
 import requests
 from hmacHelper import request
 
@@ -16,15 +17,7 @@ def PostCustomers():
     return customers
 
 
-def GetCustomer():
-    requestURL = "https://gateway-staging.ncrcloud.com/cdm/consumers/"
-    accountNumber = "2JPOAAUBWC1FMQTP"
-    httpMethod = "GET"
-    payload = {}
-    res = request(requestURL + accountNumber, httpMethod, payload)
-    return res["data"]
-
-
+<<<<<<< HEAD
 def createCustomer(profileUsername, mobile, line1, line2, city, state, postalCode):
     url = "https://gateway-staging.ncrcloud.com/cdm/consumers"
 
@@ -53,7 +46,6 @@ def CreateCustomAttributeSet():
     url = "https://gateway-staging.ncrcloud.com/site/v1/extensions"
     with open("data.json") as json_file:
         data = json.load(json_file)
-        payload = json.dumps(data["custom attribute"])
         payload = data["custom attribute"]
         print(payload)
     response = request(url, "POST", payload)
@@ -62,3 +54,12 @@ def CreateCustomAttributeSet():
 
 # print(CreateCustomAttributeSet())
 createCustomer("a00", "1112223039", "99 St Ne", "805", "Atlanta", "GA", "30308")
+=======
+def GetCustomer():
+    requestURL = "https://api.ncr.com/cdm/consumers/"
+    accountNumber = "2JPOAAUBWC1FMQTP"
+    httpMethod = "GET"
+    payload = {}
+    res = request(requestURL + accountNumber, httpMethod, payload)
+    return res["data"]
+>>>>>>> 6a44bc43a7ed879388266d93b1efeda66ece50c7
