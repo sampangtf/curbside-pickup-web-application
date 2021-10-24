@@ -22,7 +22,6 @@ def getRestaurants():
     for ref_id in ref_ids:
         restaurant = request(url + ref_id, "GET", {})
         restaurants.append(restaurant)
-        print(restaurant)
     return restaurants
 
 
@@ -49,8 +48,11 @@ def UpdateCustomAttributes():
             payload = json.dumps(data["ratings"][i])
             getid = request(
                 "https://gateway-staging.ncrcloud.com/site/sites/by-reference-id/"
-                + ref_ids[i], "GET", {})
-            response = request(url + getid['data']['id'], "PATCH", payload)
+                + ref_ids[i],
+                "GET",
+                {},
+            )
+            response = request(url + getid["data"]["id"], "PATCH", payload)
             ratings.append(response["data"])
     return ratings
 
@@ -60,3 +62,7 @@ def GenerateRestaurants():
     postRestaurants()
     RestaurantRatings = UpdateCustomAttributes()
     return RestaurantRatings
+
+
+c = GenerateRestaurants()
+print(c)

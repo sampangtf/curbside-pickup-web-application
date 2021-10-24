@@ -19,7 +19,13 @@ function Result(props) {
                     </h3>
                   </div>
                   <div className="rating col-md-3">
-                    <p>9.0</p>
+                    <p>
+                      {
+                        res.restaurant["customAttributeSets"]["attributes"][0][
+                          "value"
+                        ]
+                      }
+                    </p>
                   </div>
                 </div>
                 <div className="details">
@@ -40,7 +46,12 @@ function Result(props) {
       </div>
       <div className="col-md-4 order">
         <p>
-          <strong>Total distance: </strong>1.5 mi
+          <strong>Total distance: </strong>
+          {props.distance}
+        </p>
+        <p>
+          <strong>Average rating: </strong>
+          {props.avg_rating}
         </p>
         <button
           type="button"

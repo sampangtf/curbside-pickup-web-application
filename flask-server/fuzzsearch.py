@@ -11,14 +11,20 @@ pip install thefuzz
 
 def SearchRestaurant(input):
 
-    with open("data.json") as json_file:
+    # with open("data.json") as json_file:
 
-        data = json.load(json_file)
-        menu_list = []
-        # restaurants = data["restaurants"]
-        restaurants = GenerateRestaurants()
-        for restaurant in restaurants:
-            menu_list.append(restaurant["description"])
+    #     data = json.load(json_file)
+    #     menu_list = []
+    #     # restaurants = data["restaurants"]
+    #     restaurants = GenerateRestaurants()
+    #     for restaurant in restaurants:
+    #         menu_list.append(restaurant["description"])
+
+    menu_list = []
+    # restaurants = data["restaurants"]
+    restaurants = GenerateRestaurants()
+    for restaurant in restaurants:
+        menu_list.append(restaurant["description"])
 
     print(menu_list)
     result = []
@@ -29,7 +35,7 @@ def SearchRestaurant(input):
                 "description": restaurants[i]["description"],
                 "address": restaurants[i]["address"],
             }
-            result.append(dict)
+            result.append(restaurants[i])
 
     if len(result) > 0:
         return result

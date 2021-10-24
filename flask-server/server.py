@@ -68,7 +68,6 @@ def searchResults():
     (
         sorted_combinations,
         total_traveltime_list,
-        routes,
         weighted_rating_list,
     ) = combination_ranking(combinations, origin)
     return {
