@@ -13,7 +13,7 @@ This is precisely where our web application comes in. Our “bundling” option 
 ## User Guide
 1. Create an account by typing personal information.
 
-2. Enter keywords for food for multiple search (for example, "sushi" + "boba")
+2. Enter keywords for multiple search (for example, "sushi" + "boba")
 
 <img src="https://github.com/charlie-nik/hackgt/blob/main/images/start.png?raw=true" width=800>
 
