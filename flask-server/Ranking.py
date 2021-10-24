@@ -26,7 +26,7 @@ def combination_ranking(combinations, origin):
         #rating_list = [(float(res[-2]), int(res[-1])) for res in descriptions]
         rating_list = []
         for res in combination:
-            for attribute in ['customAttributeSets'][0]['attributes']:
+            for attribute in res['customAttributeSets'][0]['attributes']:
                 if attribute['key'] == 'rating':
                     rating = attribute['value']
                 elif attribute['key'] == 'numofratings':
@@ -72,6 +72,7 @@ def combination_ranking(combinations, origin):
     
     # info_dict = dict()
     # info_dict = {for name, traveltime, route, rating in zip()}
+    total_traveltime_list, routes, weighted_rating_list
 
     return sorted_combinations, total_traveltime_list, routes, weighted_rating_list
 
