@@ -65,7 +65,8 @@ def hmacHelper(
 
     message = bytes(toSign, "utf-8")
 
-    digest = hmac.new(key, msg=bytes(message), digestmod=hashlib.sha512).digest()
+    digest = hmac.new(key, msg=bytes(message),
+                      digestmod=hashlib.sha512).digest()
 
     signature = base64.b64encode(digest).decode("ascii")
 
@@ -110,7 +111,15 @@ def request(requestURL, httpMethod, payload):
     if httpMethod == "GET":
         request = requests.get(requestURL, headers=headers)
     elif httpMethod == "POST":
-        request = requests.request("POST", requestURL, headers=headers, data=payload)
+        request = requests.request("POST",
+                                   requestURL,
+                                   headers=headers,
+                                   data=payload)
+    elif httpMethod == "PATCH":
+        request = requests.request("PATCH",
+                                   requestURL,
+                                   headers=headers,
+                                   data=payload)
 
     res = dict()
     res["status"] = request.status_code

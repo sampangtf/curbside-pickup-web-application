@@ -15,21 +15,6 @@
             "longitude": -84.3726
         },
         "status": "ACTIVE",
-        "attribute": [
-            {
-              "typeName": "myCustomAttributeSetName",
-              "attribute": [
-                {
-                  "key": "Rating",
-                  "value": "3.3"
-                },
-                {
-                  "key": "NumOfRatings",
-                  "value": "500"
-                }
-              ]
-            }
-          ],
         "referenceId": "site-001"
     },
     {
@@ -48,7 +33,6 @@
             "longitude": -84.4488
         },
         "status": "ACTIVE",
-        "customAttributeSets":"4.5",
         "referenceId": "site-002"
     },
     {
@@ -67,12 +51,11 @@
             "longitude": -84.3805
         },
         "status": "ACTIVE",
-        "customAttributeSets":"4.4",
         "referenceId": "site-003"
     },
     {
         "siteName": "A.S.K. Tea",
-        "enterpriseUnitName": "site-005",
+        "enterpriseUnitName": "site-004",
         "description": "Boba Tea/Matcha/Coffee/Tea/Cake",
         "address": {
             "street": "1100 Spring St NW",
@@ -86,8 +69,7 @@
             "longitude": -84.3901220250066
         },
         "status": "ACTIVE",
-        "customAttributeSets":"3.9",
-        "referenceId": "site-005"
+        "referenceId": "site-004"
     },
     {
         "siteName": "Honey Bubble",
@@ -105,7 +87,6 @@
             "longitude": -84.3489
         },
         "status": "ACTIVE",
-        "customAttributeSets":"4.5",
         "referenceId": "site-005"
     },
     {
@@ -124,7 +105,6 @@
             "longitude": -84.3949
         },
         "status": "ACTIVE",
-        "customAttributeSets":"4.8",
         "referenceId": "site-006"
     },
     {
@@ -143,7 +123,6 @@
             "longitude": -84.3726
         },
         "status": "ACTIVE",
-        "customAttributeSets":"4.5",
         "referenceId": "site-007"
     },
     {
@@ -162,7 +141,6 @@
             "longitude": -84.3726
         },
         "status": "ACTIVE",
-        "customAttributeSets":"4.5",
         "referenceId": "site-008"
     },
     {
@@ -181,7 +159,6 @@
             "longitude": -84.3805
         },
         "status": "ACTIVE",
-        "customAttributeSets":"4.5",
         "referenceId": "site-009"
     }
     ],
@@ -239,14 +216,14 @@
     ],
     "custom attribute":{
         "typeId": {
-          "typeName": "myCustomAttributeSetName"
+          "typeName": "RATING_NUMBER"
         },
         "description": "This set is used to show the rating of a restaurant and the number of ratings of a restaurant.",
         "fields": [
           {
             "description": "Indicates the rating of a restaurant.",
             "fieldName": "Rating",
-            "fieldType": "NUMBER"
+            "fieldType": "STRING"
           },
           {
             "description": "Specifies the number of ratings.",
@@ -254,8 +231,126 @@
             "fieldType": "NUMBER"
           }
         ]
-      }
-
+      },
+    "ratings":[
+        {
+            "customAttributeSets": [{
+                "attributes": [{
+                    "key": "Rating",
+                    "value": "3.4"
+                }, {
+                    "key": "NumOfRatings",
+                    "value": "452"
+                }],
+                "typeName":
+                "RATING_NUMBER"
+            }]
+        },
+        {
+            "customAttributeSets": [{
+                "attributes": [{
+                    "key": "Rating",
+                    "value": "4.5"
+                }, {
+                    "key": "NumOfRatings",
+                    "value": "1200"
+                }],
+                "typeName":
+                "RATING_NUMBER"
+            }]
+        },
+        {
+            "customAttributeSets": [{
+                "attributes": [{
+                    "key": "Rating",
+                    "value": "4.3"
+                }, {
+                    "key": "NumOfRatings",
+                    "value": "206"
+                }],
+                "typeName":
+                "RATING_NUMBER"
+            }]
+        },
+        {
+            "customAttributeSets": [{
+                "attributes": [{
+                    "key": "Rating",
+                    "value": "4.8"
+                }, {
+                    "key": "NumOfRatings",
+                    "value": "1800"
+                }],
+                "typeName":
+                "RATING_NUMBER"
+            }]
+        },
+        {
+            "customAttributeSets": [{
+                "attributes": [{
+                    "key": "Rating",
+                    "value": "4.1"
+                }, {
+                    "key": "NumOfRatings",
+                    "value": "1289"
+                }],
+                "typeName":
+                "RATING_NUMBER"
+            }]
+        },
+        {
+            "customAttributeSets": [{
+                "attributes": [{
+                    "key": "Rating",
+                    "value": "5.0"
+                }, {
+                    "key": "NumOfRatings",
+                    "value": "12"
+                }],
+                "typeName":
+                "RATING_NUMBER"
+            }]
+        },
+        {
+            "customAttributeSets": [{
+                "attributes": [{
+                    "key": "Rating",
+                    "value": "3.7"
+                }, {
+                    "key": "NumOfRatings",
+                    "value": "115"
+                }],
+                "typeName":
+                "RATING_NUMBER"
+            }]
+        },
+        {
+            "customAttributeSets": [{
+                "attributes": [{
+                    "key": "Rating",
+                    "value": "4.3"
+                }, {
+                    "key": "NumOfRatings",
+                    "value": "3452"
+                }],
+                "typeName":
+                "RATING_NUMBER"
+            }]
+        },
+        {
+            "customAttributeSets": [{
+                "attributes": [{
+                    "key": "Rating",
+                    "value": "4.5"
+                }, {
+                    "key": "NumOfRatings",
+                    "value": "325"
+                }],
+                "typeName":
+                "RATING_NUMBER"
+            }]
+        }
+    ]
 }
 
 
