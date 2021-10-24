@@ -6,7 +6,7 @@ function NavBar(props) {
     <nav className="navbar navbar-expand-md navbar-dark bg-dark">
       <div className="container-fluid">
         <a className="navbar-brand" href="/">
-          RoundUp
+          One Go!
         </a>
         <button
           className="navbar-toggler"
