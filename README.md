@@ -11,13 +11,14 @@ One day, you have an irrational thirst for sushi :sushi: and boba tea :bubble_te
 This is precisely where our web application comes in. Our “bundling” option allows customers to order from multiple restaurants and pick up their orders in a single trip. Given a list of multiple keywords, we conduct **fuzzy search** on each one of them and create a set of combinations between each search. **_Each combination is treated as one item, and for each combination, our ranking algorithm computes a combined score from 1) the weighted average rating of all restaurants in this combination, and 2) the total distance of the shortest route that covers all restaurants in this combination._**
 
 ## User Guide
-1. Create an account by typing the 
-2. Enter keywords for multiple search (for example, "sushi" + "boba")
+1. Create an account by typing personal information.
+
+2. Enter keywords for food for multiple search (for example, "sushi" + "boba")
 
 <img src="https://github.com/charlie-nik/hackgt/blob/main/images/start.png?raw=true" width=800>
 
-3. Browse the ranked bundles of the two restaurants from search results
-4. Choose the bundles you prefer and place an order on all restaurants in it
+3. Browse the ranked bundles of the restaurants from search results
+4. Choose the combination you prefer and place a bundling order on all restaurants in it
 
 <img src="https://github.com/charlie-nik/hackgt/blob/main/images/order.png?raw=true" width=800>
 
