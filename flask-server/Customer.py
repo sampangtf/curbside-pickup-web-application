@@ -61,4 +61,4 @@ def CreateCustomAttributeSet():
     return response
 
 
-CreateCustomAttributeSet()
+PostCustomers()
