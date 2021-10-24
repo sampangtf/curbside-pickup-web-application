@@ -3,7 +3,8 @@ from hmacHelper import request
 from Customer import GetCustomer
 
 customer = GetCustomer()
-customerID = customer["consumerAccountNumber"]
+print(customer)
+# customerID = customer["consumerAccountNumber"]
 orderID = "11920734258000737729"
 
 
@@ -28,4 +29,4 @@ def getOrderByCustomerID(customerID):
 
 # order = getOrderByID(orderID)
 # print(order)
-getOrderByCustomerID(customerID)
+# getOrderByCustomerID(customerID)

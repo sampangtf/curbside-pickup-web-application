@@ -17,6 +17,15 @@ def PostCustomers():
     return customers
 
 
+def GetCustomer():
+    requestURL = "https://gateway-staging.ncrcloud.com/cdm/consumers/"
+    accountNumber = "ODHE8QEBO961DDLX"
+    httpMethod = "GET"
+    payload = {}
+    res = request(requestURL + accountNumber, httpMethod, payload)
+    return res["data"]
+
+
 def createCustomer(profileUsername, mobile, line1, line2, city, state, postalCode):
     url = "https://gateway-staging.ncrcloud.com/cdm/consumers/"
 
@@ -52,13 +61,9 @@ def CreateCustomAttributeSet():
 
 
 # print(CreateCustomAttributeSet())
-createCustomer("a00", "1112223039", "99 St Ne", "805", "Atlanta", "GA", "30308")
-
-
-def GetCustomer():
-    requestURL = "https://api.ncr.com/cdm/consumers/"
-    accountNumber = "2JPOAAUBWC1FMQTP"
-    httpMethod = "GET"
-    payload = {}
-    res = request(requestURL + accountNumber, httpMethod, payload)
-    return res["data"]
+# customer = createCustomer(
+#     "a00", "1112223039", "99 St Ne", "805", "Atlanta", "GA", "30308"
+# )
+# print(customer)
+print(GetCustomer())
+# print(PostCustomers())

@@ -5,8 +5,8 @@ import hashlib
 import requests
 from datetime import datetime, timezone
 
-sharedKey = "f54729f968b3454dbcf4ed2a0f0e6f74"
-secretKey = "7e5ee64df7c240519a1eba1237929f00"
+sharedKey = "ba536c561f8f456f8c579ab21e94a99e"
+secretKey = "cb1723d601c644668d8786d6ff78bdb1"
 nepOrganization = "test-drive-1e47895b4b784893ad73d"
 
 

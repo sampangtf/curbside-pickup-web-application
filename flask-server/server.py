@@ -25,33 +25,33 @@ def getRestaurants():
 
 @app.route("/customers", methods=["GET", "POST"])
 def customers():
-    # if request.method == "POST":
-    #     profileUsername = request.args.get("profileUsername")
-    #     mobile = request.args.get("mobile")
-    #     line1 = request.args.get("line1")
-    #     line2 = request.args.get("line2")
-    #     city = request.args.get("city")
-    #     state = request.args.get("state")
-    #     postalCode = request.args.get("postalCode")
+    if request.method == "POST":
+        profileUsername = request.args.get("profileUsername")
+        mobile = request.args.get("mobile")
+        line1 = request.args.get("line1")
+        line2 = request.args.get("line2")
+        city = request.args.get("city")
+        state = request.args.get("state")
+        postalCode = request.args.get("postalCode")
 
-    #     customer = createCustomer(
-    #         profileUsername, mobile, line1, line2, city, state, postalCode
-    #     )
-    #     return {"results": customer}
+        customer = createCustomer(
+            profileUsername, mobile, line1, line2, city, state, postalCode
+        )
+        return {"results": customer}
     # else:
     #     return {"foo": "bar"}
-    profileUsername = request.args.get("profileUsername")
-    mobile = request.args.get("mobile")
-    line1 = request.args.get("line1")
-    line2 = request.args.get("line2")
-    city = request.args.get("city")
-    state = request.args.get("state")
-    postalCode = request.args.get("postalCode")
+    # profileUsername = request.args.get("profileUsername")
+    # mobile = request.args.get("mobile")
+    # line1 = request.args.get("line1")
+    # line2 = request.args.get("line2")
+    # city = request.args.get("city")
+    # state = request.args.get("state")
+    # postalCode = request.args.get("postalCode")
 
-    customer = createCustomer(
-        profileUsername, mobile, line1, line2, city, state, postalCode
-    )
-    return {"results": 1, "result": customer}
+    # customer = createCustomer(
+    #     profileUsername, mobile, line1, line2, city, state, postalCode
+    # )
+    # return {"results": 1, "result": customer}
 
 
 @app.route("/search-results", methods=["GET"])
