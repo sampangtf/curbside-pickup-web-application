@@ -60,10 +60,5 @@ def CreateCustomAttributeSet():
     return response
 
 
-# print(CreateCustomAttributeSet())
-# customer = createCustomer(
-#     "a00", "1112223039", "99 St Ne", "805", "Atlanta", "GA", "30308"
-# )
-# print(customer)
-print(GetCustomer())
-# print(PostCustomers())
+PostCustomers()
+createCustomer("a00", "1112223039", "99 St Ne", "805", "Atlanta", "GA", "30308")
