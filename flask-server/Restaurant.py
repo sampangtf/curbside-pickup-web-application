@@ -26,5 +26,5 @@ def getRestaurants():
     return restaurants
 
 
-print(getRestaurants())
-# postRestaurants()
+# print(getRestaurants())
+postRestaurants()
