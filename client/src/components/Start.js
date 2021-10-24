@@ -2,12 +2,9 @@ import React from "react";
 import "./Start.css";
 
 function Start(props) {
-  const inputRestaurants = ["First restaurant", "Second restaurant"];
-  // const [customer, setCustomer] = useState({});
-
   return (
-    <div className="row">
-      <div className="rol-md-6 account">
+    <div className="row div">
+      <div className="rol-sm-6 account">
         <form>
           <h1 className="h3 mb-3 fw-normal">Account Information</h1>
           <div class="form-floating">
@@ -112,7 +109,7 @@ function Start(props) {
           </div>
         </form>
       </div>
-      <div className="rol-md-6 food">
+      <div className="rol-sm-4 food">
         <form onSubmit={(e) => e.preventDefault()}>
           <h1 className="h3 mb-3 fw-normal">Food </h1>
 
@@ -120,27 +117,27 @@ function Start(props) {
             <input
               type="text"
               className="form-control"
-              id={inputRestaurants[0]}
+              id="First restaurant"
               placeholder="_"
               value={props.keywords[0]}
               onInput={(e) => {
                 props.onKeywordInput([e.target.value, props.keywords[1]]);
               }}
             />
-            <label for={inputRestaurants[0]}>{inputRestaurants[0]}</label>
+            <label for="First restaurant">First restaurant</label>
           </div>
           <div className="form-floating right">
             <input
               type="text"
               className="form-control"
-              id={inputRestaurants[1]}
+              id="Second restaurant"
               placeholder="_"
               value={props.keywords[1]}
               onInput={(e) => {
                 props.onKeywordInput([props.keywords[0], e.target.value]);
               }}
             />
-            <label for={inputRestaurants[1]}>{inputRestaurants[1]}</label>
+            <label for="Second restaurant">Second restaurant</label>
           </div>
 
           {/* <div class="checkbox mb-3">
@@ -152,9 +149,9 @@ function Start(props) {
             className="w-100 btn btn-lg btn-primary"
             onClick={props.onSubmit}
           >
+            <i class="fas fa-car-side"></i>
             Go!
           </button>
-          {/* <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p> */}
         </form>
       </div>
     </div>
