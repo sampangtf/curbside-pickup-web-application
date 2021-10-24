@@ -17,7 +17,6 @@ CORS(app)
 restaurants = getRestaurants()
 
 
-
 @app.route("/restaurants", methods=["GET"])
 def getRestaurants():
     try:
@@ -43,18 +42,6 @@ def customers():
         return {"results": customer}
     else:
         return {"foo": "bar"}
-    # profileUsername = request.args.get("profileUsername")
-    # mobile = request.args.get("mobile")
-    # line1 = request.args.get("line1")
-    # line2 = request.args.get("line2")
-    # city = request.args.get("city")
-    # state = request.args.get("state")
-    # postalCode = request.args.get("postalCode")
-
-    # customer = createCustomer(
-    #     profileUsername, mobile, line1, line2, city, state, postalCode
-    # )
-    # return {"results": 1, "result": customer}
 
 
 @app.route("/search-results", methods=["GET"])
@@ -74,12 +61,23 @@ def searchResults():
         else:
             for r2 in results_list_2:
                 combinations.append([r1, r2])
-    
+
     with open("data.json") as json_file:
         data = json.load(json_file)
-        origin = data["customer_cite"][0]['siteName']
-    sorted_combinations, total_traveltime_list, routes, weighted_rating_list = combination_ranking(combinations, origin)
-    return {"results": sorted_combinations}
+        origin = data["customer_cite"][0]["siteName"]
+    (
+        sorted_combinations,
+        total_traveltime_list,
+        routes,
+        weighted_rating_list,
+    ) = combination_ranking(combinations, origin)
+    return {
+        "results": {
+            "combinations": sorted_combinations,
+            "distance_list": total_traveltime_list,
+            "avg_rating_list": weighted_rating_list,
+        }
+    }
 
 
 @app.route("/orders", methods=["POST", "GET"])

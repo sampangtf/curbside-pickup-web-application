@@ -42,7 +42,23 @@ function App() {
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
+        console.log(data["results"]);
         setSearchResults(data["results"]);
+
+        console.log(typeof searchResults);
+        console.log(searchResults);
+
+        // const res = [];
+        // for (var i = 0; i < searchResults["distance_list"]; i++) {
+        //   const result = {
+        //     restaurants: searchResults["combination"][i],
+        //     distance: searchResults["distance_list"][i],
+        //     avg_rating: searchResults["avg_rating_list"][i],
+        //   };
+        //   res.push(result);
+        // }
+
+        // searchResults(res);
       });
   };
 
@@ -88,7 +104,7 @@ function App() {
           <NoResult keywords={keywords} />
         ) : (
           searchResults.map((result, i) => {
-            return <Result key={i} restaurants={result} onOrder={placeOrder} />;
+            return <Result key={i} combination={result} onOrder={placeOrder} />;
           })
         )}
       </div>

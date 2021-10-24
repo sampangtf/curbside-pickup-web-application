@@ -111,7 +111,7 @@ function Start(props) {
       </div>
       <div className="rol-sm-4 food">
         <form onSubmit={(e) => e.preventDefault()}>
-          <h1 className="h3 mb-3 fw-normal">Food </h1>
+          <h1 className="h3 mb-3 fw-normal">Restaurants & Groceries</h1>
 
           <div className="form-floating right">
             <input
@@ -146,7 +146,7 @@ function Start(props) {
             </label>
           </div> */}
           <button
-            className="w-100 btn btn-lg btn-primary"
+            className="w-100 btn btn-lg btn-danger"
             onClick={props.onSubmit}
           >
             <i class="fas fa-car-side"></i>

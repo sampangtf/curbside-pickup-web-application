@@ -1,5 +1,5 @@
 from thefuzz import fuzz
-from Restaurant import GenerateRestaurant
+from Restaurant import GenerateRestaurants
 import json
 
 """
@@ -9,7 +9,6 @@ pip install thefuzz
 """
 
 
-
 def SearchRestaurant(input):
 
     with open("data.json") as json_file:
@@ -17,7 +16,7 @@ def SearchRestaurant(input):
         data = json.load(json_file)
         menu_list = []
         # restaurants = data["restaurants"]
-        restaurants= GenerateRestaurant()
+        restaurants = GenerateRestaurants()
         for restaurant in restaurants:
             menu_list.append(restaurant["description"])
 

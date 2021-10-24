@@ -7,7 +7,7 @@ function Result(props) {
       <div className="col-md-8 results">
         <div className="card mb-4 rounded-3 shadow-sm">
           <div className="card-body row">
-            {props.restaurants.map((res, i) => (
+            {props.combination.map((res, i) => (
               <div key={i} className="col-md-6 restaurant">
                 <p className="index">
                   {i === 0 ? "1st restaurant" : "2nd restaurant"}
@@ -15,7 +15,7 @@ function Result(props) {
                 <div className="row">
                   <div className="col-md-9 restaurant-name">
                     <h3 className="card-title pricing-card-title">
-                      {res.siteName}
+                      {res.restaurant.siteName}
                     </h3>
                   </div>
                   <div className="rating col-md-3">
@@ -25,12 +25,12 @@ function Result(props) {
                 <div className="details">
                   <p className="details-text">
                     <strong>Address: </strong>
-                    {res.address.street}
+                    {res.restaurant.address.street}
                   </p>
                   <p className="details-text">
                     <strong>Cuisine: </strong>
-                    {res.description.substring(0, 30) +
-                      (res.description.length > 30 ? "..." : "")}
+                    {res.restaurant.description.substring(0, 30) +
+                      (res.restaurant.description.length > 30 ? "..." : "")}
                   </p>
                 </div>
               </div>
