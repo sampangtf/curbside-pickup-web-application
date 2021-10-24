@@ -28,7 +28,7 @@ This is precisely where our web application comes in. Our “bundling” option 
 * CDM API
 * Site API (including Custom Attribute)
 * Order API
-* (Menu) (Desireable to be added in future extension, but restricted)
+* (Menu) (Desireable to be added in future extension, yet unavailable in this Challenge)
 
 ## Tools
 * Backend: ```Python``` ```Flask```
