@@ -6,7 +6,7 @@ function Start(props) {
     <div className="row div">
       <div className="rol-sm-6 account">
         <form>
-          <h1 className="h3 mb-3 fw-normal">Account Information</h1>
+          <h1>Account Information</h1>
           <div class="form-floating">
             <input
               type="text"
@@ -111,12 +111,12 @@ function Start(props) {
       </div>
       <div className="rol-sm-4 food">
         <form onSubmit={(e) => e.preventDefault()}>
-          <h1 className="h3 mb-3 fw-normal">Restaurants & Groceries</h1>
+          <h1>Restaurants & Groceries</h1>
 
           <div className="form-floating right">
             <input
               type="text"
-              className="form-control"
+              className="form-control restaurant"
               id="First restaurant"
               placeholder="_"
               value={props.keywords[0]}
@@ -129,7 +129,7 @@ function Start(props) {
           <div className="form-floating right">
             <input
               type="text"
-              className="form-control"
+              className="form-control restaurant"
               id="Second restaurant"
               placeholder="_"
               value={props.keywords[1]}
@@ -139,12 +139,27 @@ function Start(props) {
             />
             <label for="Second restaurant">Second restaurant</label>
           </div>
+          <div className="form-floating right">
+            <button
+              className="w-100 btn btn-lg btn-outline-danger new-restaurant"
+              id="NewRestaurant"
+            >
+              <i class="fas fa-plus fa-lg"></i>Add another restaurant
+            </button>
+          </div>
 
-          {/* <div class="checkbox mb-3">
-            <label>
-              <input type="checkbox" value="remember-me" /> Remember me
-            </label>
-          </div> */}
+          <div className="mode-container">
+            <div className="radio-input">
+              <label>
+                <input type="radio" name="mode" /> Faster
+              </label>
+            </div>
+            <div className="radio-input">
+              <label>
+                <input type="radio" name="mode" /> Yummier
+              </label>
+            </div>
+          </div>
           <button
             className="w-100 btn btn-lg btn-danger"
             onClick={props.onSubmit}
