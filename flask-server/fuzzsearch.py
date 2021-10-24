@@ -32,9 +32,7 @@ def SearchRestaurant(input):
     if len(result) > 0:
         return result
     else:
-        return "Your search - {} - did not match any restaurants.\nSuggestions:\nMake sure all words are spelled correctly.\nTry different keywords.\nTry more general keywords.".format(
-            input
-        )
+        return ""
 
 
 input = "sushi"

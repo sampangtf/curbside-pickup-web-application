@@ -1,4 +1,5 @@
 import json
+
 import requests
 from hmacHelper import request
 
@@ -56,7 +57,6 @@ def CreateCustomAttributeSet():
     url = "https://gateway-staging.ncrcloud.com/site/v1/extensions"
     with open("data.json") as json_file:
         data = json.load(json_file)
-        payload = json.dumps(data["custom attribute"])
         payload = data["custom attribute"]
         print(payload)
     response = request(url, "POST", payload)
