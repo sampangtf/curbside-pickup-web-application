@@ -11,6 +11,8 @@ function App() {
   const [customer, setCustomer] = useState({});
   const [keywords, setKeywords] = useState(["", ""]);
   const [searchResults, setSearchResults] = useState([[]]);
+  const [searchStarted, setSearchStarted] = useState(false);
+  const [searched, setSearched] = useState(false);
   const [ordered, setOrdered] = useState(false);
   const [order, setOrder] = useState({});
 
@@ -18,6 +20,7 @@ function App() {
   const start = () => {
     createCustomer();
     setLoggedIn(true);
+    setSearchStarted(true);
     startSearch();
   };
 
@@ -42,23 +45,28 @@ function App() {
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data["results"]);
-        setSearchResults(data["results"]);
+        const results = data["results"];
 
-        console.log(typeof searchResults);
-        console.log(searchResults);
+        console.log(results);
+        // setSearchResults(results);
 
-        // const res = [];
-        // for (var i = 0; i < searchResults["distance_list"]; i++) {
-        //   const result = {
-        //     restaurants: searchResults["combination"][i],
-        //     distance: searchResults["distance_list"][i],
-        //     avg_rating: searchResults["avg_rating_list"][i],
-        //   };
-        //   res.push(result);
-        // }
+        // console.log(typeof searchResults);
+        // console.log(searchResults);
 
-        // searchResults(res);
+        if (typeof results !== "string") {
+          var res = [];
+          for (var i = 0; i < results["distance_list"].length; i++) {
+            const result = {
+              restaurants: results["combinations"][i],
+              distance: results["distance_list"][i],
+              avg_rating: results["avg_rating_list"][i],
+            };
+            res.push(result);
+          }
+          console.log(res);
+          setSearchResults(res);
+          setSearched(true);
+        }
       });
   };
 
@@ -92,7 +100,7 @@ function App() {
         />
       </div>
     );
-  } else if (!ordered) {
+  } else if (searchStarted && !searched) {
     return (
       <div>
         <NavBar
@@ -103,13 +111,24 @@ function App() {
         {typeof searchResults === "string" ? (
           <NoResult keywords={keywords} />
         ) : (
-          searchResults.map((result, i) => {
-            return <Result key={i} combination={result} onOrder={placeOrder} />;
-          })
+          <p>Loading...</p>
         )}
       </div>
     );
-  } else {
+  } else if (searched && !ordered) {
+    return (
+      <div>
+        <NavBar
+          keywords={keywords}
+          onKeywordInput={setKeywords}
+          onSubmit={startSearch}
+        />
+        {searchResults.map((result, i) => {
+          return <Result key={i} combination={result} onOrder={placeOrder} />;
+        })}
+      </div>
+    );
+  } else if (ordered) {
     return (
       <div>
         <Order order={order} />

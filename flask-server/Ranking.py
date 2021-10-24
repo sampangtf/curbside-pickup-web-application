@@ -13,7 +13,9 @@ def combination_ranking(combinations, origin):
     for combination in combinations_copy:
         destination_list = [res["siteName"] for res in combination]
 
-        _distance_matrix = distance_matrix(origin=origin, destination_list=destination_list, depature_time = "now")
+        _distance_matrix = distance_matrix(
+            origin=origin, destination_list=destination_list, depature_time="now"
+        )
 
         ####Getting Travel Time Score
 
@@ -37,7 +39,7 @@ def combination_ranking(combinations, origin):
                 rating_list.append((float(rating), int(norating)))
             except:
                 rating_list.append((2.5, 5))
-            
+
         total_norating = sum([float(norating) for (rating, norating) in rating_list])
         weighted_rating = [
             rating * (norating / total_norating) for rating, norating in rating_list
@@ -46,11 +48,13 @@ def combination_ranking(combinations, origin):
         weighted_rating_list.append(sum(weighted_rating))
 
     ######Scaling#######
-    min_travel_time_score =  min(traveltime_score_list)
+    min_travel_time_score = min(traveltime_score_list)
     max_travel_time_score = max(traveltime_score_list)
-    scaled_traveltime_score = [(float(traveltime_score_list[idx]) - min_travel_time_score) \
-            /(max_travel_time_score - min_travel_time_score) \
-            for idx, combination in enumerate(combinations_copy)]
+    scaled_traveltime_score = [
+        (float(traveltime_score_list[idx]) - min_travel_time_score)
+        / (max_travel_time_score - min_travel_time_score)
+        for idx, combination in enumerate(combinations_copy)
+    ]
 
     max_rating = max(weighted_rating_list)
     min_rating = min(weighted_rating_list)
@@ -61,21 +65,26 @@ def combination_ranking(combinations, origin):
     ]
 
     combination_score = []
-    for combination, traveltime, rating in zip(combinations_copy, scaled_traveltime_score, scaled_rating):
+    for combination, traveltime, rating in zip(
+        combinations_copy, scaled_traveltime_score, scaled_rating
+    ):
         overall_score = 0.5 * rating + 0.5 * traveltime
         combination_score.append(overall_score)
     # combination_score = scaled_rating
 
-    sorted_combinations = [sorted(res, key = res['overall_score']) for res in combinations_copy]
-    sorted_combinations = json.dumps(
-        sorted(
-            combinations_copy,
-            key=lambda x: combination_score[combinations_copy.index(x)],
-            reverse=True,
-        )
+    # sorted_combinations = [sorted(res, key = res['overall_score']) for res in combinations_copy]
+    sorted_combinations = sorted(
+        combinations_copy,
+        key=lambda x: combination_score[combinations_copy.index(x)],
+        reverse=True,
     )
+
     sorted_combination_score = sorted(combination_score)
-    sorted_total_traveltime_list = sorted(total_traveltime_list, key = lambda x: combination_score[total_traveltime_list.index(x)], reverse =True)
+    sorted_total_traveltime_list = sorted(
+        total_traveltime_list,
+        key=lambda x: combination_score[total_traveltime_list.index(x)],
+        reverse=True,
+    )
     sorted_weighted_rating_list = sorted(
         weighted_rating_list,
         key=lambda x: combination_score[weighted_rating_list.index(x)],
@@ -84,5 +93,9 @@ def combination_ranking(combinations, origin):
 
     # info_dict = dict()
     # info_dict = {for name, traveltime, route, rating in zip()}
-    
-    return sorted_combinations, sorted_total_traveltime_list, sorted_weighted_rating_list
+
+    return (
+        sorted_combinations,
+        sorted_total_traveltime_list,
+        sorted_weighted_rating_list,
+    )

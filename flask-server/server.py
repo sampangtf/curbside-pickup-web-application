@@ -52,7 +52,9 @@ def searchResults():
     results_list_2 = SearchRestaurant(k2)
 
     if type(results_list_1) == str or type(results_list_2) == str:
-        return {"results": results_list_1}
+        return {
+            "results": "false",
+        }
 
     combinations = []
     for r1 in results_list_1:
