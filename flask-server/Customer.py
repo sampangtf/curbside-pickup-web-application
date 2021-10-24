@@ -26,25 +26,24 @@ def GetCustomer():
     return res["data"]
 
 
-def createCustomer(profileUsername, mobile, line1, line2, city, state, postalCode):
+def createCustomer(profileUsername, mobile, line1, line2, city, state,
+                   postalCode):
     url = "https://gateway-staging.ncrcloud.com/cdm/consumers/"
 
-    payload = json.dumps(
-        {
-            "profileUsername": profileUsername,
-            "mobile": mobile,
-            "addresses": [
-                {
-                    "name": "Home",
-                    "line1": line1,
-                    "line2": line2,
-                    "city": city,
-                    "state": state,
-                    "postalCode": postalCode,
-                }
-            ],
-        }
-    )
+    payload = json.dumps({
+        "profileUsername":
+        profileUsername,
+        "mobile":
+        mobile,
+        "addresses": [{
+            "name": "Home",
+            "line1": line1,
+            "line2": line2,
+            "city": city,
+            "state": state,
+            "postalCode": postalCode,
+        }],
+    })
 
     response = request(url, "POST", payload)
     return response["data"]
