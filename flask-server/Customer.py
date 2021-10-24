@@ -1,8 +1,14 @@
 import json
+
+import requests
 from hmacHelper import request
 
 
+<<<<<<< HEAD
 def CreateCustomer():
+=======
+def PostCustomers():
+>>>>>>> edec6b73b7e922766f1e9b17c5d9c85830aa00f0
     url = "https://gateway-staging.ncrcloud.com/cdm/consumers"
 
     customers = []
@@ -15,6 +21,7 @@ def CreateCustomer():
     return customers
 
 
+<<<<<<< HEAD
 def GetCustomer():
     requestURL = "https://gateway-staging.ncrcloud.com/cdm/consumers/"
     accountNumber = "2JPOAAUBWC1FMQTP"
@@ -22,16 +29,55 @@ def GetCustomer():
     payload = {}
     res = request(requestURL + accountNumber, httpMethod, payload)
     return res["data"]
+=======
+<<<<<<< HEAD
+def createCustomer(profileUsername, mobile, line1, line2, city, state, postalCode):
+    url = "https://gateway-staging.ncrcloud.com/cdm/consumers"
+
+    payload = json.dumps(
+        {
+            "profileUsername": profileUsername,
+            "mobile": mobile,
+            "address": [
+                {
+                    "name": "Home",
+                    "line1": line1,
+                    "line2": line2,
+                    "city": city,
+                    "state": state,
+                    "postalCode": postalCode,
+                }
+            ],
+        }
+    )
+
+    response = request(url, "POST", payload)
+    print(response["data"])
+>>>>>>> edec6b73b7e922766f1e9b17c5d9c85830aa00f0
 
 
 def CreateCustomAttributeSet():
     url = "https://gateway-staging.ncrcloud.com/site/v1/extensions"
     with open("data.json") as json_file:
         data = json.load(json_file)
+<<<<<<< HEAD
         payload = json.dumps(data['custom attribute'])
+=======
+        payload = data["custom attribute"]
+>>>>>>> edec6b73b7e922766f1e9b17c5d9c85830aa00f0
         print(payload)
     response = request(url, "POST", payload)
     return response
 
 
-print(CreateCustomAttributeSet())
+# print(CreateCustomAttributeSet())
+createCustomer("a00", "1112223039", "99 St Ne", "805", "Atlanta", "GA", "30308")
+=======
+def GetCustomer():
+    requestURL = "https://api.ncr.com/cdm/consumers/"
+    accountNumber = "2JPOAAUBWC1FMQTP"
+    httpMethod = "GET"
+    payload = {}
+    res = request(requestURL + accountNumber, httpMethod, payload)
+    return res["data"]
+>>>>>>> 6a44bc43a7ed879388266d93b1efeda66ece50c7
