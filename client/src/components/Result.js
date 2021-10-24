@@ -2,8 +2,6 @@ import React from "react";
 import "./Result.css";
 
 function Result(props) {
-  const placeOrder = () => {};
-
   return (
     <div className="row row-cols-1 row-cols-md-1 mb-3 text-center cards">
       <div className="col-md-8 results">
@@ -46,10 +44,8 @@ function Result(props) {
         </p>
         <button
           type="button"
-          className="w-100 btn btn-lg btn-outline-success"
-          onClick={() => {
-            console.log("place order");
-          }}
+          className="w-100 btn btn-lg btn-success"
+          onClick={props.onOrder}
         >
           Order
         </button>

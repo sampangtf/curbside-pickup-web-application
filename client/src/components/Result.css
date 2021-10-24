@@ -3,7 +3,7 @@ body {
 }
 
 .cards {
-    padding-left: 20px;
+    padding: 0 40px;
     height: 230px;
     border: none;
 }
@@ -20,25 +20,11 @@ body {
 
 }
 
-/* .border-between > [class*='col-']:before {
-    background: #000;
-    bottom: 0;
-    content: " ";
-    left: 0;
-    position: absolute;
-    width: 1px;
-    top: 0;
- }
- 
-.border-between > [class*='col-']:first-child:before {
-    display: none;
-} */
-
 .index{
     font-size: 0.9rem;
     margin-bottom: 2px;
     font-weight: bold;
-    color: red;
+    color: blue;
 }
 
 .card-title {
@@ -66,5 +52,5 @@ body {
 }
 
 .order {
-    padding-top: 50px;
+    padding-top: 130px;
 }

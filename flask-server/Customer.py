@@ -47,3 +47,17 @@ def createCustomer(profileUsername, mobile, line1, line2, city, state,
 
     response = request(url, "POST", payload)
     return response["data"]
+
+
+def CreateCustomAttributeSet():
+    url = "https://gateway-staging.ncrcloud.com/site/v1/extensions"
+    with open("data.json") as json_file:
+        data = json.load(json_file)
+        payload = data["custom attribute"]
+        print(payload)
+    response = request(url, "POST", payload)
+    return response
+
+
+# PostCustomers()
+createCustomer("a0", "1112223030", "99 St Ne", "805", "Atlanta", "GA", "30308")

@@ -5,14 +5,15 @@ from Restaurant import postRestaurants, getRestaurants
 from Customer import createCustomer
 from fuzzsearch import SearchRestaurant
 from Order import placeOrder, getOrderByID, getOrderByCustomerID
-from Ranking import restaurant_rank
+
+# from Ranking import restaurant_rank
 import json
 
 app = Flask(__name__)
 CORS(app)
 
 restaurants = getRestaurants()
-origin = json.load("data.json")["customer_cite"][0]["siteName"]
+# origin = json.load("data.json")["customer_cite"][0]["siteName"]
 
 
 @app.route("/restaurants", methods=["GET"])
@@ -38,8 +39,8 @@ def customers():
             profileUsername, mobile, line1, line2, city, state, postalCode
         )
         return {"results": customer}
-    # else:
-    #     return {"foo": "bar"}
+    else:
+        return {"foo": "bar"}
     # profileUsername = request.args.get("profileUsername")
     # mobile = request.args.get("mobile")
     # line1 = request.args.get("line1")
@@ -77,13 +78,13 @@ def searchResults():
 
 @app.route("/orders", methods=["POST", "GET"])
 def orders():
-    customer = request.args.get("customer")
     if request.method == "POST":
-        placeOrder(customer)
+        return {"results": placeOrder()}
     elif request.method == "GET":
-        order = getOrderByCustomerID(customer["consumerAccountNumber"])
+        orderID = request.args.get("id")
+        order = getOrderByID(orderID)
         return {
-            "orderID": order["id"],
+            "id": order["id"],
             "status": order["status"],
             "dateCreated": order["dateCreated"],
         }
