@@ -29,6 +29,7 @@ def best_routes(origin, destination_list):
     total_traveltime_list = []
     for route in possible_routes:
         traveltime = 0
+        print(route)
         traveltime = distance_matrix(origin, route[0])['rows'][0]['elements'][0]['duration']['value'] #first leg
         for idx, destination in enumerate(route[0:-1]):
             traveltime += distance_matrix(route[idx], route[idx+1])['rows'][0]['elements'][0]['duration']['value']

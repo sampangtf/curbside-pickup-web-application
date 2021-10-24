@@ -21,11 +21,13 @@ def combination_ranking(combinations, origin):
         traveltime_score_list.append(1 / total_traveltime)
 
         ####Getting Rating
-        descriptions = [res['description'].split('/') for res in combination]
- 
-        rating_list = [(float(res[-2]), int(res[-1])) for res in descriptions]
-
-        total_norating = sum([norating for rating, norating in rating_list])
+        #descriptions = [res['description'].split('/') for res in combination]
+        #rating_list = [(float(res[-2]), int(res[-1])) for res in descriptions]
+        rating_list = [(float(res['customAttributeSets'][0]['attributes'][0]['value']), \
+             float(res['customAttributeSets'][0]['attributes'][1]['value'])) \
+            for res in combination]
+        #print(rating_list)
+        total_norating = sum([float(norating) for (rating, norating) in rating_list])
         weighted_rating = [rating * (norating/total_norating) for rating, norating in rating_list]
         
         weighted_rating_list.append(sum(weighted_rating))
