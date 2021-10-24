@@ -18,6 +18,9 @@ This is precisely where our web application comes in. Our “bundling” option 
 <img src="https://github.com/charlie-nik/hackgt/blob/main/images/start.png?raw=true" width=800>
 
 3. Browse the ranked bundles of the restaurants from search results
+
+<img src="https://github.com/charlie-nik/hackgt/blob/main/images/search.jpg?raw=true" width=800>
+
 4. Choose the combination you prefer and place a bundling order on all restaurants in it
 
 <img src="https://github.com/charlie-nik/hackgt/blob/main/images/order.png?raw=true" width=800>
