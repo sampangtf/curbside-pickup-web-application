@@ -2,8 +2,7 @@ import requests
 import urllib3
 from urllib.parse import quote
 from itertools import permutations
-
-api_key = "AIzaSyD0wyr72_R-L6zVrVBso0skDkUN5QLygPE"
+from config import api_key
 
 
 def distance_matrix(origin, destination_list, depature_time="now"):
