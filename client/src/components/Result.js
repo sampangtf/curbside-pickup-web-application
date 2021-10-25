@@ -52,7 +52,7 @@ function Result(props) {
         </p>
         <button
           type="button"
-          className="w-100 btn btn-lg btn-success"
+          className="w-100 btn btn-lg btn-danger"
           onClick={props.onOrder}
         >
           Order

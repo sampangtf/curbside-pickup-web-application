@@ -112,6 +112,7 @@ input[id="Second restaurant"] {
 }
 
 .new-restaurant {
+  margin-top: 15px;
   margin-bottom: 10px;
   font-size: 1rem;
   font-weight: bold;
@@ -124,7 +125,7 @@ input[id="Second restaurant"] {
 }
 
 .mode-container {
-  margin: 30px 0;
+  margin: 32px 0;
   text-align: center;
 }
 

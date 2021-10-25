@@ -147,7 +147,6 @@ function Start(props) {
               <i class="fas fa-plus fa-lg"></i>Add another restaurant
             </button>
           </div>
-
           <div className="mode-container">
             <div className="radio-input">
               <label>

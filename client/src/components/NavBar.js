@@ -54,7 +54,7 @@ function NavBar(props) {
             <i className="fas fa-plus-circle"></i>
             <li>
               <button
-                className="btn btn-large btn-primary"
+                className="btn btn-large btn-danger"
                 onClick={props.onSubmit}
               >
                 Search
