@@ -3,7 +3,7 @@
 ## Motivation
 Our team attempts to explore innovative applications in a world that are significantly impacted by **COVID-19**. The food hospitality industry, which is traditionally dominated by dine-in services, witnesses an enormous increase in demands for contact-free services such as delivery and curbside pickup. While delivery is supported by a wide range of awesome apps such as DoorDash and UberEats, there haven't been a lot of applications that are specifically curtailed to **curbside pickup**, which offers a more flexible option of food at a much affordable cost. This shortage inspires our idea to use NCR BSP APIs to create a curbside pick-up optimization platform, as our project for the HackGT 8 challenge.
 
-Here is a quick video demo of our website.
+**Click the picture below to check out a quick video demo of our web product.**
 [![Watch the video](https://img.youtube.com/vi/9d7NmMlag4Q/maxresdefault.jpg)](https://youtu.be/9d7NmMlag4Q)
 
 ## Project Description
